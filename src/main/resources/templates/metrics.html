@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Metrics Dashboard</title>
+</head>
+<body>
+<h2>Engineering Metrics</h2>
+
+<form method="get" action="/metrics/calculate">
+    From: <input type="date" name="from" required />
+    To: <input type="date" name="to" required />
+    <input type="submit" value="Calculate" />
+</form>
+
+<div th:if="${cfr != null}">
+    <p><strong>Change Failure Rate (CFR):</strong> <span th:text="${cfr}"></span></p>
+    <p><strong>Mean Time to Recovery (MTTR in minutes):</strong> <span th:text="${mttr}"></span></p>
+</div>
+</body>
+</html>
